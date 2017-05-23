@@ -1,0 +1,34 @@
+{
+  "HOME": {
+    "HOME": "Home",
+    "WELCOME": "Welcome {{value}}",
+    "UNPAID_INVOICES": "You have {{value}} unpaid invoices",
+    "INVOICES": "invoices"
+  },
+  "CAR": {
+    "CAR": "Car",
+    "BUILDING_YEAR": "Building year: {{value}}",
+    "WEIGHT": "Weight: {{value}} kg",
+    "MILEAGE": "Mileage: {{value}}",
+    "TYPE": "Type: {{value}}"
+  },
+  "INVOICE": {
+    "MY_INVOICES": "My invoices",
+    "ALERT": {
+      "TITLE": "Pay for invoices?",
+      "MESSAGE": "Are you sure you want to pay {{length}} invoices totalling in €{{priceTotal}}",
+      "CANCEL": "Cancel",
+      "PAY": "Pay",
+      "SUCCESS_MESSAGE": "You have payed {{length}} invoices"
+    }
+  },
+  "TRIP": {
+    "TRIPS": "Trips",
+    "DATE": "Date: {{value}}",
+    "DISTANCE": "Distance: {{value}} km",
+    "NUMBER_OF_TRIPS": "Trips: {{value}}",
+    "STATUS_PAID": "Status: paid",
+    "STATUS_NOT_PAID": "Status: Not yet paid",
+    "TOTAL_PRICE": "Total price: {{value}}"
+  }
+}

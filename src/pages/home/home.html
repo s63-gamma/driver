@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"HOME.HOME" | translate}}</ion-title>
+  </ion-navbar>
+  <ion-buttons start>
+    <button ion-button icon-only (click)="login()">
+      <ion-icon name="information-circle"></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="register()">
+      <ion-icon name="download"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <h1>
+        {{ 'HOME.WELCOME' | translate:{"value": user.name} }}
+      </h1>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="unPaidInvoices.length > 0">
+    <ion-card-content>{{ 'HOME.UNPAID_INVOICES' | translate:{"value": unPaidInvoices.length} }}</ion-card-content>
+    <button ion-button icon-left block (click)="gotoCarTab()"><ion-icon name="eye"></ion-icon>{{"HOME.INVOICES" | translate}}</button>
+  </ion-card>
+</ion-content>

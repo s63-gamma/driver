@@ -1,0 +1,10 @@
+$height: 200px;
+
+.sebm-google-map-container {
+  height: $height;
+}
+
+.map {
+  max-height: $height + 100;
+  overflow: auto;
+}

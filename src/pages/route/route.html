@@ -1,0 +1,63 @@
+<!--
+  Generated template for the trip page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{"TRIP.TRIPS" | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let invoice of invoices">
+    <ion-card-header>{{invoice.date | date}}</ion-card-header>
+    <ion-card-content>
+      <div class="map">
+        <div *ngFor="let trip of invoice.trips" >
+          <sebm-google-map
+            #map
+            [latitude]="51.900223"
+            [longitude]="-1.157684"
+            [zoom]="12"
+            [styles]="'transit'"
+            [disableDefaultUI]="false"
+            [scrollwheel]="false"
+            [mapDraggable]="false"
+            [zoomControl]="false"
+            [streetViewControl]="false">
+            <sebm-google-map-marker
+              [latitude]="trip.startPoint.latitude"
+              [longitude]="trip.startPoint.longitude">
+              <sebm-google-map-info-window>
+                {{trip.startPoint.date}}
+              </sebm-google-map-info-window>
+            </sebm-google-map-marker>
+            <sebm-google-map-marker
+              [latitude]="trip.endPoint.latitude"
+              [longitude]="trip.endPoint.longitude">
+              <sebm-google-map-info-window>
+                {{trip.endPoint.date}}
+              </sebm-google-map-info-window>
+            </sebm-google-map-marker>
+          </sebm-google-map>
+          <br/>
+        </div>
+      </div>
+      <ion-list>
+        <p>{{"TRIP.DATE" | translate: {"value": invoice.date | date} }}</p>
+        <p>{{"TRIP.DISTANCE" | translate: {"value": invoice.distance} }}</p>
+        <p>{{"TRIP.NUMBER_OF_TRIPS" | translate: {"value": invoice.trips.length} }}</p>
+        <p *ngIf="invoice.status === 0">{{"TRIP.STATUS_NOT_PAID" | translate}}<ion-icon item-right name="alert"></ion-icon></p>
+        <p *ngIf="invoice.status === 1">{{"TRIP.STATUS_PAID" | translate}} <ion-icon item-right name="checkmark"></ion-icon></p>
+        <ion-item-divider></ion-item-divider>
+
+        <p>{{"TRIP.TOTAL_PRICE" | translate: {"value": invoice.priceTotal} }}</p>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
