@@ -30,20 +30,22 @@
             [mapDraggable]="false"
             [zoomControl]="false"
             [streetViewControl]="false">
-            <sebm-google-map-marker
-              [latitude]="trip.startPoint.latitude"
-              [longitude]="trip.startPoint.longitude">
-              <sebm-google-map-info-window>
-                {{trip.startPoint.date}}
-              </sebm-google-map-info-window>
-            </sebm-google-map-marker>
-            <sebm-google-map-marker
-              [latitude]="trip.endPoint.latitude"
-              [longitude]="trip.endPoint.longitude">
-              <sebm-google-map-info-window>
-                {{trip.endPoint.date}}
-              </sebm-google-map-info-window>
-            </sebm-google-map-marker>
+            <div *ngIf="trip">
+              <sebm-google-map-marker
+                [latitude]="trip.startPoint.latitude"
+                [longitude]="trip.startPoint.longitude">
+                <sebm-google-map-info-window>
+                  {{trip.startPoint.date}}
+                </sebm-google-map-info-window>
+              </sebm-google-map-marker>
+              <sebm-google-map-marker
+                [latitude]="trip.endPoint.latitude"
+                [longitude]="trip.endPoint.longitude">
+                <sebm-google-map-info-window>
+                  {{trip.endPoint.date}}
+                </sebm-google-map-info-window>
+              </sebm-google-map-marker>
+            </div>
           </sebm-google-map>
           <br/>
         </div>

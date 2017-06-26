@@ -21,7 +21,7 @@ import {Invoice} from "../../invoice";
 })
 export class RoutePage {
   public invoices: Invoice[];
-  public trips: Trip[]
+  public trips: Trip[];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
